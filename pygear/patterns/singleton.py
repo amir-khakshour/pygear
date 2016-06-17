@@ -3,6 +3,7 @@ from pygear.core import six
 
 
 class SingletonMetaClass(type):
+    """ Singleton Pattern """
     def __init__(cls, name, bases, attrs):
         super(SingletonMetaClass, cls).__init__(name, bases, attrs)
         original_new = cls.__new__
