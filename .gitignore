@@ -49,6 +49,9 @@ coverage.xml
 *.mo
 *.pot
 
+# Misc
+.pypirc
+
 # Django stuff:
 *.log
 
@@ -57,3 +60,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+
+.idea/
