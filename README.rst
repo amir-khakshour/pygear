@@ -13,7 +13,7 @@ pygear
         :target: https://pygear.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/amir-khakshour/cookiecutter-django/shield.svg
+.. image:: https://pyup.io/repos/github/amir-khakshour/pygear/shield.svg
      :target: https://pyup.io/repos/github/amir-khakshour/pygear/
      :alt: Updates
 
