@@ -114,5 +114,5 @@ class Config(BaseConfig):
     def get_default_config(self):
         try:
             return get_data(__package__, 'default_{section}.conf'.format(section=self.SECTION))
-        except FileNotFoundError:
+        except IOError:
             pass
