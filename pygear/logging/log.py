@@ -25,7 +25,7 @@ level_names = {
 
 def msg(message=None, _level=INFO, **kw):
     kw['logLevel'] = kw.pop('level', _level)
-    kw.setdefault('system', 'miutils')
+    kw.setdefault('system', 'pygear')
     if message is None:
         log.msg(**kw)
     else:
@@ -34,13 +34,13 @@ def msg(message=None, _level=INFO, **kw):
 
 def err(_stuff=None, _why=None, **kw):
     kw['logLevel'] = kw.pop('level', ERROR)
-    kw.setdefault('system', 'miutils')
+    kw.setdefault('system', 'pygear')
     log.err(_stuff, _why, **kw)
 
 
 def debug(message=None, **kw):
     kw['logLevel'] = DEBUG
-    kw.setdefault('system', 'miutils')
+    kw.setdefault('system', 'pygear')
     if message is None:
         log.msg(**kw)
     else:
@@ -49,7 +49,7 @@ def debug(message=None, **kw):
 
 def warn(message=None, **kw):
     kw['logLevel'] = WARNING
-    kw.setdefault('system', 'miutils')
+    kw.setdefault('system', 'pygear')
     if message is None:
         log.msg(**kw)
     else:
@@ -58,7 +58,7 @@ def warn(message=None, **kw):
 
 def crt(message=None, **kw):
     kw['logLevel'] = CRITICAL
-    kw.setdefault('system', 'miutils')
+    kw.setdefault('system', 'pygear')
     if message is None:
         log.msg(**kw)
     else:
@@ -67,7 +67,7 @@ def crt(message=None, **kw):
 
 def silent(message=None, **kw):
     kw['logLevel'] = SILENT
-    kw.setdefault('system', 'miutils')
+    kw.setdefault('system', 'pygear')
     if message is None:
         log.msg(**kw)
     else:
@@ -76,7 +76,7 @@ def silent(message=None, **kw):
 
 def trace(message=None, **kw):
     kw['logLevel'] = TRACE
-    kw.setdefault('system', 'miutils')
+    kw.setdefault('system', 'pygear')
     if message is None:
         log.msg(**kw)
     else:
