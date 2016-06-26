@@ -1,6 +1,7 @@
 import base64
-from six.moves.urllib.request import getproxies, proxy_bypass
-from six.moves.urllib.parse import unquote, urlunparse
+
+from pygear.core.six.moves.urllib.parse import unquote, urlunparse
+from pygear.text.encoding import force_bytes
 
 try:
     from urllib2 import _parse_proxy
@@ -14,7 +15,7 @@ def get_proxy(url, orig_type):
 
     if user and password:
         user_pass = '%s:%s' % (unquote(user), unquote(password))
-        creds = base64.b64encode(user_pass).strip()
+        creds = base64.b64encode(force_bytes(user_pass)).strip()
     else:
         creds = None
 

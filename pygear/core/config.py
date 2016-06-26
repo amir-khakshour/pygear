@@ -1,8 +1,8 @@
 import os
 import glob
 from os.path import expanduser
-from pkgutil import get_data
 from pygear.core.six import StringIO
+from pygear.text.encoding import force_text
 from pygear.core.six.moves.configparser import ConfigParser, NoSectionError, NoOptionError
 
 
@@ -28,7 +28,7 @@ class BaseConfig(object):
             try:
                 default_config = self.get_default_config()
                 if default_config:
-                    self.cp.readfp(StringIO(default_config))
+                    self.cp.readfp(StringIO(force_text(default_config)))
             except NotImplementedError:
                 pass
             try:
@@ -109,10 +109,6 @@ class Config(BaseConfig):
         near_cfg = closest_cfg('{section}.conf'.format(section=self.SECTION))
         if near_cfg:
             sources.append(near_cfg)
+
         return sources
 
-    def get_default_config(self):
-        try:
-            return get_data(__package__, 'default_{section}.conf'.format(section=self.SECTION))
-        except IOError:
-            pass
